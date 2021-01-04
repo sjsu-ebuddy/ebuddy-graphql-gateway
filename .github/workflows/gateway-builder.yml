@@ -1,0 +1,31 @@
+name: Ebuddy Gateway Builder
+
+on:
+  pull_request:
+    branches:
+    - main
+    - dev
+  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+    
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+      
+
+    - name: install, test and build 
+      run: |
+        sudo npm i -g yarn
+        yarn install
+        yarn test
+        yarn build
