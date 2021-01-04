@@ -1,4 +1,5 @@
 import {ITypeDefinitions, ITypedef, gql} from "apollo-server-express";
+import IdentitySchema from "./identity";
 
 const root: ITypedef = gql`
     type Query {
@@ -11,7 +12,8 @@ const root: ITypedef = gql`
 `;
 
 const typeDefs: ITypeDefinitions = [
-    root
+    root,
+    IdentitySchema
 ];
 
 export default typeDefs;

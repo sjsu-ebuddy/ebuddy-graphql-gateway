@@ -6,6 +6,7 @@
   "author": "localhost-1337 (ebuddy team)",
   "license": "MIT",
   "dependencies": {
+    "apollo-datasource-rest": "^0.9.6",
     "apollo-server-express": "^2.19.1",
     "compression": "^1.7.4",
     "connect-redis": "^5.0.0",
