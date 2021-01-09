@@ -10,7 +10,7 @@ const createRootMutation = gql`
 `;
 
 const rootQuery = gql`
-    query Root {
+    query {
         root
     }
 `;
@@ -18,7 +18,7 @@ const rootQuery = gql`
 
 describe ("Root Resolvers", () => {
 
-    describe("RootResolvers mutation", () => {
+    describe("RootResolvers Mutation", () => {
         let testApolloClient: ApolloServerTestClient;
         let mockContext; 
         beforeAll( () => {
@@ -36,7 +36,6 @@ describe ("Root Resolvers", () => {
             expect(errors).toBeFalsy();
             expect(data.root).toBeTruthy();
             expect(data.root).toEqual("Server is up.");
-            logger.info(data);
         });
 
 
@@ -58,7 +57,6 @@ describe ("Root Resolvers", () => {
             expect(errors).toBeFalsy;
             expect(data.root).toBeTruthy;
             expect(data.root).toEqual("Server is up.");
-            logger.info(data.root);
         });
 
     });
